@@ -13,4 +13,4 @@
 
 #Tutos blackjack
 
-[link 1](http://www.guide-blackjack.com/Regles-du-black-jack.html)
+[Regles-du-black-jack](http://www.guide-blackjack.com/Regles-du-black-jack.html)
