@@ -9,9 +9,11 @@
  */
 angular.module('blackjackApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+    $scope.bet = 0;
+
+    $scope.deal = function(){
+      console.log('L\'utilisateur a misé ', $scope.bet);
+    }
+
   });
