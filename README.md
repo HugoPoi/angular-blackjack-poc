@@ -1,19 +1,12 @@
-# BlackJack
+#Installation environement de dev
+## Pré-requis
+ * Installer nodeJS (et npm deja compris dedans)
+ * voir https://nodejs.org/download/
 
-
-###Feature	(Valeur)
-- Jouer au Blackjack	(40)
-- Jouer de l’argent	(33)
-- Jouer en ligne	(31)
-- Gérer les comptes 	(30)
-- Administration	(30)
-- Prise en compte des cas particuliers	(25)
-- Richesse graphique	(24)
-- SAV	(22)
-- Statistiques	(21)
-- Publicité dans le jeu	(20)
-- Utiliser les règles internationales	(19)
-- Version mobile	(17)
-- Mode démo	(15)
-- Version multilingue	(13)
-- Forum	12
+## Install de l'env de dev
+1. `npm install -g bower grunt-cli`
+1. `git clone https://github.com/samuelfr/BlackJack.git`
+1. `cd BlackJack`
+1. `npm install`
+1. `bower install`
+1. `grunt serve`
