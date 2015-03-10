@@ -10,3 +10,7 @@
 1. `npm install`
 1. `bower install`
 1. `grunt serve`
+
+#Tutos blackjack
+
+[Regles-du-black-jack](http://www.guide-blackjack.com/Regles-du-black-jack.html)
