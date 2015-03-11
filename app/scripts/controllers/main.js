@@ -9,7 +9,7 @@
  */
 angular.module('blackjackApp')
   .controller('MainCtrl', function ($scope) {
-
+    var miseCourrante = 0;
     $scope.bet = 0;
 
     $scope.deal = function(){
@@ -17,5 +17,5 @@ angular.module('blackjackApp')
     }
 
 
-    $scope.card1 = ' 0 100';
+    $scope.card1 = 0;
   });
