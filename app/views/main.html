@@ -1,12 +1,15 @@
 <div class="row game-container">
   <div class="col-md-4">
-    <form>
-      <div class="form-group">
-        <label for="input-bet">Mise</label>
-        <input ng-model="bet" type="number" class="form-control" id="input-bet" placeholder="">
+    <div>
+      <label for="input-bet">Mise</label>
+      <input ng-model="bet" type="number" min="1" class="form-control" id="input-bet" placeholder=""
+             ng-disabled="isDealDone()"/>
+      <button ng-click="reset()" type="submit" class="btn btn-default" ng-disabled="isDealDone()">Reset</button>
+
+      <div class="btn_actions">
+        <button ng-click="deal()" class="btn btn-default"  ng-disabled="isDealDone()">Deal</button>
       </div>
-      <button ng-click="deal()" type="submit" class="btn btn-default">Deal</button>
-    </form>
+    </div>
   </div>
   <div class="col-md-8 mat">
     <div class="row">
