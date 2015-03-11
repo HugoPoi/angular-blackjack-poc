@@ -16,4 +16,6 @@ angular.module('blackjackApp')
       console.log('L\'utilisateur a misé ', $scope.bet);
     }
 
+
+    $scope.card1 = ' 0 100';
   });

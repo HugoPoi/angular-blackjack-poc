@@ -3,8 +3,17 @@
   overflow: hidden;
 }
 .mat{
-
   background-color: green;
   margin-bottom: -99999px;
   padding-bottom: 99999px;
 }
+
+
+.card-image{
+  display: block;
+  background:url("../images/cards.png") 0 0 no-repeat;
+  height: 240px;
+  width: 160px;
+  background-size: 5000%;
+}
+
