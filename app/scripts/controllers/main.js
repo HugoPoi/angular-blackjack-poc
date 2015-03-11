@@ -16,7 +16,7 @@ angular.module('blackjackApp')
       'blackjack.services.sabot'
     ];
   })
-  .controller('blackjack', function($scope){
+  .controller('blackjackCtrl', function($scope, Sabot){
     $scope.dealerHand = null;
     $scope.playerHands = [];
     $scope.user = {};
@@ -30,6 +30,8 @@ angular.module('blackjackApp')
 
     $scope.deal = function(){
       console.log('L\'utilisateur a misé ', $scope.bet);
+      console.log('je recois la carte', Sabot.getCard($scope.startGame));
+      $scope.startGame = true;
     }
 
   });
