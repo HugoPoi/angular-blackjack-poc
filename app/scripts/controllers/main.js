@@ -25,4 +25,11 @@ angular.module('blackjackApp')
     $scope.bank = {};
     $scope.counter = 7;
     $scope.startGame = false;
+
+    $scope.bet = 0;
+
+    $scope.deal = function(){
+      console.log('L\'utilisateur a misé ', $scope.bet);
+    }
+
   });
