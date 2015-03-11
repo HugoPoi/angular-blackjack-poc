@@ -14,4 +14,18 @@ angular.module('blackjackApp')
       'AngularJS',
       'Karma'
     ];
+	
+	$scope.product = 'Blackjack';
+	
+	$scope.authors = [
+	  'Hugo Poissonnet',
+	  'Mamadou Coulibaly',
+	  'Antoine Ludwig',
+	  'Samuel Frigout',
+	  'Romain Notari'
+    ];
+	
+	$scope.productOwner = 'Jonathan DeGalvez';
+	$scope.scrumMaster = $scope.authors[3];
+	
   });
