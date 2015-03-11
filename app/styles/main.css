@@ -15,5 +15,7 @@
   height: 240px;
   width: 160px;
   background-size: 5000%;
+  image-rendering:-moz-crisp-edges;
+  -ms-interpolation-mode:nearest-neighbor;
 }
 
