@@ -6,22 +6,24 @@
         <input ng-model="bet" type="number" class="form-control" id="input-bet" placeholder="">
       </div>
       <button ng-click="deal()" type="submit" class="btn btn-default">Deal</button>
+      <button ng-click="flip()" type="submit" class="btn btn-default">Flip</button>
+
     </form>
   </div>
   <div class="col-md-8 mat">
     <div class="row">
       <div class="col-md-offset-3 col-md-3">
         <div class="deck-left">
-          {{bet}}
+          <div ng-include="'views/card.html'"></div>
         </div>
       </div>
       <div class="col-md-offset-3 col-md-3">
-        <div class="card-right card-image" ng-style="bet | cardbgposition">
-        </div>
       </div>
     </div>
     <div class="row">
-
+      <div class="col-md-12 player-cards">
+        <div ng-include="'views/card.html'" ng-repeat="card in playerCards"></div>
+      </div>
     </div>
   </div>
 </div>
