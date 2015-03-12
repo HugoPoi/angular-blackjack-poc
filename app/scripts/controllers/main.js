@@ -24,14 +24,15 @@ angular.module('blackjackApp')
     $scope.bet = 5;
 
     $scope.getCardTest = function(){
-      console.log('je recois la carte', Sabot.getCard($scope.startGame));
+      console.log('je recois la carte', Sabot.getCards(2));
     } 
     $scope.deal = function(){
       //Test if Bet is a number
       if(angular.isNumber($scope.bet)) {
         if (!$scope.startGame) {
           console.log('L\'utilisateur a misé ', $scope.bet);
-          console.log('je recois la carte', Sabot.getCard($scope.startGame));
+          Sabot.initSabot();
+          console.log('je recois la carte', Sabot.getCards(1));
           $scope.startGame = true;
         } else {
           console.log('Mise déjà faite');
