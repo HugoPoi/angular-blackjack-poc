@@ -16,5 +16,9 @@ angular.module('blackjack.services.sabot', [])
           return sabot[1];
         }
     },
+    "getRandomCard": function(){
+       return Math.floor(Math.random() * 52 + 1);
+	   
+    },
   };
 });
