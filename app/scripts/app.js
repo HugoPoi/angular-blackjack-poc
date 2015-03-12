@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'blackjack.services.sabot'
+    'blackjack.services.sabot',
+    'filters'
   ])
   .config(function ($routeProvider) {
     $routeProvider

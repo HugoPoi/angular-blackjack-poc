@@ -12,22 +12,22 @@
       <div class="btn_actions">
         <button ng-click="getCardTest()" class="btn btn-default" >Get card</button>
       </div>
-
     </div>
   </div>
   <div class="col-md-8 mat">
     <div class="row">
       <div class="col-md-offset-3 col-md-3">
         <div class="deck-left">
+          <div ng-include="'views/card.html'"></div>
         </div>
       </div>
       <div class="col-md-offset-3 col-md-3">
-        <div class="card-right">
-        </div>
       </div>
     </div>
     <div class="row">
-
+      <div class="col-md-12 player-cards">
+        <div ng-include="'views/card.html'" ng-repeat="card in playerCards"></div>
+      </div>
     </div>
   </div>
 </div>

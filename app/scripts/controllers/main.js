@@ -8,14 +8,6 @@
  * Controller of the blackjackApp
  */
 angular.module('blackjackApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma',
-      'blackjack.services.sabot'
-    ];
-  })
   .controller('blackjackCtrl', function($scope, Sabot){
     $scope.user = [];
     $scope.roundNumber = 0;
@@ -51,4 +43,16 @@ angular.module('blackjackApp')
       $scope.bet = 5;
     };
 
+
+    $scope.playerCards = [
+      { number: 1, state: { flipped: false } },
+      { number: 10, state: { flipped: false } },
+      { number: 12, state: { flipped: false } },
+      { number: 23, state: { flipped: false } }
+    ];
+
+
+    $scope.flip = function( card ){
+      card.state.flipped = !card.state.flipped;
+    }
   });

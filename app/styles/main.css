@@ -4,7 +4,6 @@
 }
 
 .mat{
-
   background-color: green;
   margin-bottom: -99999px;
   padding-bottom: 99999px;
@@ -18,3 +17,44 @@
 .btn_actions{
   margin: 15px;
 }
+
+.card {
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  position: relative;
+  height: 240px;
+  width: 160px;
+  margin: 10px;
+}
+
+.card figure{
+  backface-visibility: hidden;
+  position: absolute;
+  display: block;
+  background:url("../images/cards.png") 0 0 no-repeat;
+  height: 100%;
+  width: 100%;
+  background-size: 5300%;
+  image-rendering:-moz-crisp-edges;
+  -ms-interpolation-mode:nearest-neighbor;
+}
+
+.card .front {
+  background-position: 0 0 !important;
+}
+
+.card .back {
+  transform: rotateY( 180deg );
+}
+
+.card.flipped {
+  transform: rotateY( 180deg );
+}
+
+
+.player-cards{
+}
+.player-cards .card{
+  float: left;
+}
+
