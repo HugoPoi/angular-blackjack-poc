@@ -16,16 +16,30 @@ angular.module('blackjackApp')
     $scope.bet = 5;
 
     $scope.getCardTest = function(){
-      console.log('je recois la carte', Sabot.getCards(2));
-    } 
+      console.log('je recois la carte', Sabot.getCard($scope.startGame));
+    }
+	
+    $scope.playerCards = [
+      // { number: 1, state: { flipped: false } },
+      // { number: 10, state: { flipped: false } },
+      // { number: 12, state: { flipped: false } },
+      // { number: 23, state: { flipped: false } }
+    ];
+
+	$scope.dealerCards = [];
+	
     $scope.deal = function(){
       //Test if Bet is a number
       if(angular.isNumber($scope.bet)) {
         if (!$scope.startGame) {
           console.log('L\'utilisateur a misé ', $scope.bet);
-          Sabot.initSabot();
-          console.log('je recois la carte', Sabot.getCards(1));
+          // console.log('je recois la carte', Sabot.getCard($scope.startGame));
+		  $scope.playerCards.push({ number: Sabot.getCard($scope.startGame), state: { flipped: true }});
           $scope.startGame = true;
+		  $scope.playerCards.push({ number: Sabot.getCard($scope.startGame), state: { flipped: true }});
+		  $scope.dealerCards.push({ number: Sabot.getCard($scope.startGame), state: { flipped: true }});
+		  
+		  
         } else {
           console.log('Mise déjà faite');
         }
@@ -43,13 +57,7 @@ angular.module('blackjackApp')
       $scope.bet = 5;
     };
 
-
-    $scope.playerCards = [
-      { number: 1, state: { flipped: false } },
-      { number: 10, state: { flipped: false } },
-      { number: 12, state: { flipped: false } },
-      { number: 23, state: { flipped: false } }
-    ];
+	
 
 
     $scope.flip = function( card ){
