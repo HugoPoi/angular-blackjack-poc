@@ -71,4 +71,16 @@ angular.module('blackjackApp')
     $scope.flip = function (card){
       card.state.flipped = !card.state.flipped;
     };
+	
+	$scope.about = function(){
+	  $('#about_btn').magnificPopup({
+        items: {
+          src:'#mypopup'
+        },
+        type: 'inline',
+        removalDelay:0,
+        mainClass:'mypopupanim rotateIn'
+	  });
+	}
+	
   });
