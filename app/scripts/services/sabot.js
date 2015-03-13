@@ -25,7 +25,8 @@ angular.module('blackjack.services.sabot', [])
         $rootScope.sabot = _.without($rootScope.sabot, item);
       }
       else{
-        return 'no more cards';
+        initArray();
+        return giveCards(numberOfCards-i);
       }
     }
     return currentCard;
