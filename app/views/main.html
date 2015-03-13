@@ -17,12 +17,14 @@
   <div class="col-md-8 mat">
     <div class="row">
       <div class="col-md-12">
-          <div ng-include="'views/card.html'" ng-repeat="card in dealerCards"></div>
+        <h1>Dealer cards</h1>
+        <div ng-include="'views/card.html'" ng-repeat="card in dealerCards"></div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12 player-cards">
-        <div ng-include="'views/card.html'" ng-repeat="card in playerCards"></div>
+         <h1>Your cards</h1>
+         <div ng-include="'views/card.html'" ng-repeat="card in playerCards"></div>
       </div>
     </div>
   </div>
