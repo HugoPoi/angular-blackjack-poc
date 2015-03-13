@@ -8,7 +8,7 @@
  * Controller of the blackjackApp
  */
 angular.module('blackjackApp')
-  .controller('blackjackCtrl', function ($scope, Sabot){
+  .controller('blackjackCtrl', function ($scope, Sabot, $timeout){
     $scope.user = [];
     $scope.roundNumber = 0;
     $scope.bank = [];
@@ -26,9 +26,9 @@ angular.module('blackjackApp')
           //Initialisation du paquet de cartes
           Sabot.initSabot();
           //Cartes Joueur
-          $scope.getCards($scope.playerCards, 2, true);
+          $scope.getCards($scope.playerCards, 2);
           //Cartes Croupier
-          $scope.getCards($scope.dealerCards, 1, true);
+          $scope.getCards($scope.dealerCards, 1);
 
           $scope.startGame = true;
         } else{
@@ -39,14 +39,18 @@ angular.module('blackjackApp')
       }
     };
 
-    $scope.getCards = function(cards, numberOfCardsToAdd, isFlipped){
+    $scope.getCards = function(cards, numberOfCardsToAdd){
+      var animation = {flipped : false};
       var tmpCards = Sabot.getCards(numberOfCardsToAdd);
       console.log('Cartes reçues : ', tmpCards, tmpCards.length);
       for(var i = 0; i < tmpCards.length; i++){
         if(angular.isNumber(tmpCards[i])){
-          cards.push({number: tmpCards[i], state: {flipped: isFlipped}});
+          cards.push({number: tmpCards[i], state: animation});
         }
       }
+      $timeout(function(){
+        animation.flipped = true;
+      },300);
     };
 
     $scope.getCardTest = function (){
