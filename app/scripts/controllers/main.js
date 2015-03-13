@@ -34,6 +34,8 @@ angular.module('blackjackApp')
         } else{
           console.log('Mise déjà faite');
         }
+      }else{
+        alert("Mise non valide");
       }
     };
 
