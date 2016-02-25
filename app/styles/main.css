@@ -1,3 +1,11 @@
+
+body{
+  padding-top: 140px;
+}
+.navbar-top-2{
+  top: 70px;
+}
+
 .game-container{
   overflow: hidden;
   margin: 5px;
@@ -14,7 +22,8 @@
   display: inline-block;
 }
 
-.btn_actions{
+.action-btn{
+  display: block;
   margin: 15px;
 }
 

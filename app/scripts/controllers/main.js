@@ -20,7 +20,7 @@ angular.module('blackjackApp')
 
     $scope.deal = function (){
       //Test if Bet is a number
-      if(angular.isNumber($scope.bet)){
+      if(angular.isNumber($scope.bet) && $scope.bet > 0){
         if(!$scope.startGame){
           console.log('L\'utilisateur a misé ', $scope.bet);
           //Initialisation du paquet de cartes
@@ -31,7 +31,7 @@ angular.module('blackjackApp')
           $scope.getCards($scope.dealerCards, 1);
 
           $scope.startGame = true;
-        } else{
+        }else{
           console.log('Mise déjà faite');
         }
       }else{
@@ -48,39 +48,29 @@ angular.module('blackjackApp')
           cards.push({number: tmpCards[i], state: animation});
         }
       }
+      console.log("Score :",scoreCalcul(cards));
       $timeout(function(){
         animation.flipped = true;
       },300);
     };
 
-    $scope.getCardTest = function (){
-      $scope.getCards($scope.playerCards, 1, true);
+    var scoreCalcul = function(cards){
+      var score = 0;
+      cards.forEach(function(card){
+          score += (card.number-1)%13;
+      })
+      return score;
     };
 
-    $scope.getCurrentBet = function (){
-      return $scope.currentBet;
-    };
-    $scope.isDealDone = function (){
-      return $scope.startGame;
-    };
-
-    $scope.reset = function (){
-      $scope.bet = 5;
-    };
-
-    $scope.flip = function (card){
-      card.state.flipped = !card.state.flipped;
-    };
-	
-	$scope.about = function(){
-	  $('#about_btn').magnificPopup({
+    $scope.about = function(){
+      $('#about_btn').magnificPopup({
         items: {
           src:'#mypopup'
         },
         type: 'inline',
         removalDelay:0,
         mainClass:'mypopupanim rotateIn'
-	  });
-	}
-	
+      });
+    }
+
   });

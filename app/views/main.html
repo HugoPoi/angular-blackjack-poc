@@ -2,19 +2,14 @@
   <div class="col-md-4">
     <div>
       <label for="input-bet">Mise</label>
-      <input ng-model="bet" type="number" min="1" class="form-control" id="input-bet" placeholder=""
-             ng-disabled="isDealDone()"/>
-      <button ng-click="reset()" type="submit" class="btn btn-default" ng-disabled="isDealDone()">Reset</button>
+      <input ng-model="bet" type="number" min="1" class="form-control" id="input-bet" placeholder="" ng-disabled="startGame"/>
 
-      <div class="btn_actions">
-        <button ng-click="deal()" class="btn btn-default"  ng-disabled="isDealDone()">Deal</button>
-      </div>
-      <div class="btn_actions">
-        <button ng-click="getCardTest()" class="btn btn-default" ng-disabled="!isDealDone()">Get card</button>
-      </div>
-	  <div class="btn_actions" id="about_btn">
-        <button ng-click="about()" class="btn btn-default">About this project</button>
-      </div>
+      <button ng-click="deal()" class="btn btn-default action-btn"  ng-disabled="startGame">Deal</button>
+
+      <button ng-click="getCards(playerCards, 1)" class="btn btn-default action-btn" ng-disabled="!startGame">Hit !</button>
+      <button ng-click="stand()" class="btn btn-default action-btn" ng-disabled="!startGame">Stand.</button>
+
+      <button ng-click="about()" class="btn btn-default action-btn">About this project</button>
 	  <div id="mypopup" class="mfp-hide whitepopup">
 	    <p>The Blackjack ESGI Project</p><p>Authors:</p>
 		<ul>
